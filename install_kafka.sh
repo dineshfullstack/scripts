@@ -22,16 +22,16 @@ sudo yum update -y
 #sudo yum install -y java-1.8.0-openjdk git
 
 # Download and extract Apache Kafka
-wget https://downloads.apache.org/kafka/2.8.1/kafka_2.13-2.8.1.tgz
-tar xzf kafka_2.13-2.8.1.tgz
+wget https://downloads.apache.org/kafka/3.5.2/kafka_2.13-3.5.2.tgz
+tar xzf kafka_2.13-3.5.2.tgz
 
 # Start Zookeeper and Kafka server
-nohup ~/kafka_2.13-2.8.1/bin/zookeeper-server-start.sh ~/kafka_2.13-2.8.1/config/zookeeper.properties > ~/zookeeper.log 2>&1 &
-nohup ~/kafka_2.13-2.8.1/bin/kafka-server-start.sh ~/kafka_2.13-2.8.1/config/server.properties > ~/kafka.log 2>&1 &
+nohup ~/kafka_2.13-3.5.2/bin/zookeeper-server-start.sh ~/kafka_2.13-3.5.2/config/zookeeper.properties > ~/zookeeper.log 2>&1 &
+nohup ~/kafka_2.13-3.5.2/bin/kafka-server-start.sh ~/kafka_2.13-3.5.2/config/server.properties > ~/kafka.log 2>&1 &
 
 # Enable Kafka and Zookeeper on startup
-echo "nohup ~/kafka_2.13-2.8.1/bin/zookeeper-server-start.sh ~/kafka_2.13-2.8.1/config/zookeeper.properties > ~/zookeeper.log 2>&1 &" | sudo tee -a /etc/rc.d/rc.local
-echo "nohup ~/kafka_2.13-2.8.1/bin/kafka-server-start.sh ~/kafka_2.13-2.8.1/config/server.properties > ~/kafka.log 2>&1 &" | sudo tee -a /etc/rc.d/rc.local
+echo "nohup ~/kafka_2.13-3.5.2/bin/zookeeper-server-start.sh ~/kafka_2.13-3.5.2/config/zookeeper.properties > ~/zookeeper.log 2>&1 &" | sudo tee -a /etc/rc.d/rc.local
+echo "nohup ~/kafka_2.13-3.5.2/bin/kafka-server-start.sh ~/kafka_2.13-3.5.2/config/server.properties > ~/kafka.log 2>&1 &" | sudo tee -a /etc/rc.d/rc.local
 sudo chmod +x /etc/rc.d/rc.local
 
 # Install sbt for Kafka Manager
