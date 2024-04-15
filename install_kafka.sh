@@ -20,7 +20,8 @@
 # Update and install necessary software
 sudo yum update -y
 #sudo yum install -y java-1.8.0-openjdk git
-
+cd ..
+mkdir software
 # Download and extract Apache Kafka
 wget https://downloads.apache.org/kafka/3.5.2/kafka_2.13-3.5.2.tgz
 tar xzf kafka_2.13-3.5.2.tgz
